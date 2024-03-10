@@ -9,7 +9,7 @@ This code is available in the file code_question_1.sql in the folder analyses.
 To answer this question the field transaction_date and the field external_reference were included in the model fct_globepay_transaction. Here will be necessary to count the external references where the transaction_state field is equal to ACCEPTED and this number will be divided by the total number of external references. This rate will be rounded by 2. Moreover, this acceptance rate will be grouped by the transaction_date in order to know the evolution for this rate.
 The output will be the shown below:
 
-![](resources/ image1.png?raw=true)
+![](resources/image1.png?raw=true)
 
 <img title="Output question 1" src="resources/image1.png">
 
@@ -21,7 +21,7 @@ To answer this question the fields iso_code_2_card_country, transaction_state an
 It will be needed group the fields iso_code_2_card_country and transaction_state in order to know the sum of the amount in USD which previously have been calculated in the fact model. Then, it will be filtered the countries when the amount is greater than 25 million of USD.
 The output will be shown below:
 
-![](resources/ image2.png?raw=true)
+![](resources/image2.png?raw=true)
 
 <img title="Output question 2" src="resources/image2.png">
 
@@ -35,7 +35,7 @@ It will be shown the external reference when the boolean field is_missing_charge
 The query will only show the external reference when is_missing_chargeback is true.
 The output will be shown below:
 
-![](resources/ image3.png?raw=true)
+![](resources/image3.png?raw=true)
 
 <img title="Output question 3" src="resources/image3.png">
 
