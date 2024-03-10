@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: source_dataset
+    tables:
+      - name: globepay_acceptance_report
+      - name: globepay_chargeback_report

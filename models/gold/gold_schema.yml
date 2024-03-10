@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: dim_globebay_exchange_rate
+    description: >
+      "Dimension that shows information regarding exchange rate and currency
+      for each external reference"
+    columns:
+      - name: external_reference
+        data_type: string
+        description: "External reference received by globepay"
+        tests:
+          - not_null
+
+      - name: exchange_rate
+        data_type: float64
+        description: "Exchange rate applied for each external reference and currency"
+
+      - name: iso_code_3_exchange_rate_currency
+        data_type: string
+        description: "Iso code 3 for each exchange rate and external reference"
+  
+  - name: fct_globepay_transaction
+    description: "Fact table which shows information related to the transactions received by globepay source"
+    columns:
+      - name: external_reference
+        data_type: string
+        description: "External reference received by globepay"
+        tests:
+          - unique
+          - not_null
+
+      - name: transaction_date
+        data_type: timestamp
+        description: "The timestamp of the transaction"
+
+      - name: transaction_state
+        data_type: string
+        description: "The binary state of the transaction. For example: Accepted or Declined."
+
+      - name: iso_code_2_card_country
+        data_type: string
+        description: "The two-character ISO country code of the card"
+
+      - name: transaction_usd_amount
+        data_type: numeric
+        description: "Amount for each transaction in USD"
+
+      - name: is_missing_chargeback
+        data_type: boolean
+        description: "Flag if there is missing information related to chargeback for each external reference"

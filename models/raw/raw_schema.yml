@@ -1,0 +1,68 @@
+version: 2
+
+models:
+  - name: raw_globepay_acceptance
+    description: "Raw table that includes information about acceptance references"
+    columns:
+      - name: external_ref
+        data_type: string
+        description: "External reference received by globepay"
+
+      - name: status
+        data_type: boolean
+        description: "Status of the transaction"
+
+      - name: source
+        data_type: string
+        description: "Source which provides the information, in this case Globepay"
+
+      - name: ref
+        data_type: string
+        description: "Reference received by globepay"
+
+      - name: date_time
+        data_type: timestamp
+        description: "The timestamp of the transaction"
+
+      - name: state
+        data_type: string
+        description: "The binary state of the transaction. For example: Accepted or Declined."
+
+      - name: cvv_provided
+        data_type: boolean
+        description: "Flag that is true if card verification value is provided and false if not"
+
+      - name: amount
+        data_type: float64
+        description: "Amount of the transaction"
+
+      - name: country
+        data_type: string
+        description: "The two-character ISO country code of the card"
+
+      - name: currency
+        data_type: string
+        description: "The three-character ISO currency code"
+
+      - name: rates
+        data_type: string
+        description: "The exchange rate used"
+
+  - name: raw_globepay_chargeback
+    description: "Raw table that includes information about chargeback with the globepay source"
+    columns:
+      - name: external_ref
+        data_type: string
+        description: "External reference received by globepay"
+
+      - name: status
+        data_type: boolean
+        description: "Status of the transaction"
+
+      - name: source
+        data_type: string
+        description: "Source which provides the information, in this case Globepay"
+
+      - name: chargeback
+        data_type: boolean
+        description: "If the transaction has been chargedback"
