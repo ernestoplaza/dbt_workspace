@@ -53,11 +53,15 @@ In the following paragraphs will be shown the lineage for each model:
 
 In the below image is shown the lineage for the model trusted_globepay_acceptance, which the upstream dependency is raw_globepay_acceptance and the dependencies downstream are dim_globepay_exchange_rate and fct_globepay_transaction. It was included as well an expected values test in the field iso_code_3_transaction_currency due to the model dim_globepay_exchange_rate was made following this criteria:
 
+![](resources/ trusted_globepay_acceptande_lineage.png?raw=true)
+
 <img title="Lineage Trusted_globepay_acceptance model" src="resources/trusted_globepay_acceptande_lineage.png">
 
 ### Trusted_globepay_chargeback
 
 In the below image is shown the lineage for the model trusted_globepay_chargeback, which the upstream dependency is raw_globepay_chargeback and the dependency downstream is fct_globepay_transaction:
+
+![](resources/ trusted_globepay_chargeback_lineage.png?raw=true)
 
 <img title="Lineage Trusted_globepay_chargeback model" src="resources/trusted_globepay_chargeback_lineage.png">
 
@@ -67,11 +71,15 @@ In the below image is shown the lineage for the model dim_globepay_exchange_rate
 
 Moreover, in this model only will have the exchange rate values for the currencies USD, CAD, EUR, MXN and GBP. The reason, why only these currencies have been included in this table, has been explained in the paragraph *preliminary data exploration*:
 
+![](resources/ dim_globepay_echange_rate_lineage.png?raw=true)
+
 <img title="Lineage Dim_globepay_exchange_rate model" src="resources/dim_globepay_echange_rate_lineage.png">
 
 ### Fct_globepay_transaction
 
 In the below image is shown the lineage for the model fct_globepay_transaction, which the upstream dependencies are trusted_globepay_acceptance, trusted_globepay_chargeback and dim_globepay_exchange_rate. Moreover, this model will have two tests, unique and not null for the primary key external_reference
+
+![](resources/ fct_globepay_transaction_lineage.png?raw=true)
 
 <img title="Lineage Fct_globepay_transaction model" src="resources/fct_globepay_transaction_lineage.png">
 
