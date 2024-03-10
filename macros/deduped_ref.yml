@@ -1,0 +1,16 @@
+version: 2
+
+macros:
+  - name: deduped_ref
+    description: > 
+      generates a select statement to dedupe a model.
+    arguments:
+      - name: model_name
+        type: string
+        description: the model name to dedupe
+      - name: partition_field
+        type: string
+        description: comma separated value of fields to partition
+      - name: order_field
+        type: string
+        description: the field to order the partition
