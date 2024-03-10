@@ -67,13 +67,13 @@ In the below image is shown the lineage for the model dim_globepay_exchange_rate
 
 Moreover, in this model only will have the exchange rate values for the currencies USD, CAD, EUR, MXN and GBP. The reason, why only these currencies have been included in this table, has been explained in the paragraph *preliminary data exploration*:
 
-![Lineage Dim_globepay_exchange_rate model](https://github.com/ernestoplaza/dbt_workspace/blob/master/resources/dim_globepay_echange_rate_lineage.png")
+![Lineage Dim_globepay_exchange_rate model](https://github.com/ernestoplaza/dbt_workspace/blob/master/resources/dim_globepay_echange_rate_lineage.png)
 
 ### Fct_globepay_transaction
 
 In the below image is shown the lineage for the model fct_globepay_transaction, which the upstream dependencies are trusted_globepay_acceptance, trusted_globepay_chargeback and dim_globepay_exchange_rate. Moreover, this model will have two tests, unique and not null for the primary key external_reference
 
-![Lineage Fct_globepay_transaction model](https://github.com/ernestoplaza/dbt_workspace/blob/master/resources/fct_globepay_transaction_lineage.png")
+![Lineage Fct_globepay_transaction model](https://github.com/ernestoplaza/dbt_workspace/blob/master/resources/fct_globepay_transaction_lineage.png)
 
 ## Tips around macros, data validation, and documentation
 
